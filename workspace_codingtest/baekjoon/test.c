@@ -2,11 +2,7 @@
 
 int main(void) {
 
-    char str[100];
-
-    scanf("%s", str);
-    printf("it's test\n");
-    printf("%s\n", str);
+    printf("%d", 1);
 
     return 0;
 
