@@ -82,17 +82,17 @@ void push(int num) {
 }
 
 void pop() {
-    int top = stack[cnt - 1];
-    stack[cnt - 1] = stack[cnt];
-    cnt--;
 
     if(cnt != 0) {
-        printf("%d\n", top);
+        printf("%d\n", stack[cnt - 1]);
     } else {
         printf("%d\n", -1);
-    }
 
-    top = 0;
+        return;
+    }
+    
+    stack[cnt - 1] = 0;
+    cnt--;
 }
 
 void size() {
@@ -125,7 +125,7 @@ int main(void) {
     int num = 0;
 
     for(int i = 0; i < n; i++) {
-        scanf("%s", &str);
+        scanf("%s", str);
 
         if(strcmp(str, "push") == 0) {
             scanf("%d", &num);
