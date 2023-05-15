@@ -67,17 +67,15 @@
 int number[100001] = {0};
 int cnt = 0;
 
-void push(int num) {
+void stack(int num) {
 
-   // if(cnt != 0) {
-        if(num != 0) {
-            number[cnt] = num;
-            cnt++;
-        } else {
-            number[cnt -1] = 0;
-            cnt--;
-        }
-   // } 
+    if(num != 0) {
+        number[cnt] = num;
+        cnt++;
+    } else {
+        number[cnt -1] = 0;
+        cnt--;
+    }
 
 }
 
@@ -92,8 +90,12 @@ int main(void) {
         int num = 0;
         scanf("%d", &num);
 
-        push(num);
+        stack(num);
+    }
 
+    // printf("%d\n", sizeof(number) / sizeof(int));
+
+    for(int i = 0; i < cnt; i++) {
         sum += number[i];
     }
 
