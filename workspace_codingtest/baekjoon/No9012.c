@@ -60,11 +60,19 @@ int main(void) {
     char ps[51] = {0};
 
     char arr[51] = {0};
-    int cnt = 0;
+
+    // fgets(ps, sizeof(ps), stdin);
 
     for(int i = 0; i < T; i++) {
-        fgets(ps, sizeof(ps), stdin);
+        memset(ps, 0x00, 51*sizeof(char)); // 배열 초기화
+        memset(arr, 0x00, 51*sizeof(char));
+
+        // fgets(ps, sizeof(ps), stdin);
+        scanf("%s", ps);
+        // printf("%s", ps);
         int len = strlen(ps);
+
+        int cnt = 0;
 
         for(int j = 0; j < len; j++) {
 
@@ -84,14 +92,13 @@ int main(void) {
         }
 
         if(cnt == 0) {
-            printf("%s\n", "Yes");
+            printf("%s\n", "YES");
         } else {
-            printf("%s\n", "No");
+            printf("%s\n", "NO");
         }
 
     }
 
-    
-
     return 0;
+
 }
